@@ -51,8 +51,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 ROOT_URLCONF = 'eventmanagementproject.urls'
 
 TEMPLATES = [
@@ -80,7 +81,7 @@ WSGI_APPLICATION = 'eventmanagementproject.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(default='postgres://fisatevent_as3o_user:QvwziU9EWhOLgSjRznmdXjAkVj4T4rFS@dpg-ck0nvp1jbtgs73c3jrag-a/fisatevent_as3o')
 }
-}
+
 
 
 # Password validation
